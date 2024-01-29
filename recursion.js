@@ -1,5 +1,3 @@
-//#region 6
-
 function countUp(maxNumber=10){
     if(maxNumber<=0)
         return []
@@ -24,32 +22,27 @@ function countDown(maxNumber=10){
 print(countDown(-1))
 print(countDown(10))
 print(countDown(5))
-function range(n=0){
-    print("param:", n)
-    if (n == 0){
-        print("if:", n)
-        return [n]
-    }
-
-    r = range(n-1)
-
-    r.push(n)
-    print("returning...", r)
-
-    return r
-}
-
-function range2(start=0, end=0){
-}
-
-print(range(10))
-
-function print(...e){
-    console.log(...e)
-}
-
 
 // #TODO
+//multiply the first n elements of an array
+function multiplyFirst(arr, n){
+  let product = 1
+  for (let i = 0; i<n; i++){
+    product*=arr[i]
+  }
+  return product
+}
+
+//[1,2,3], 2 >> 1*2 = 2
+//1 >> 1
+//0 >> 0
+//[0,3,2,1], 1 >> 0
+
+print("mULTIPLY FIRST")
+print(multiplyFirst([1,2,3], 2))
+print(multiplyFirst([1,2,3], 1))
+print(multiplyFirst([1,2,3], 0))
+print(multiplyFirst([0,3,2,1], 1))
 
 /**
  * Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
@@ -84,3 +77,28 @@ function print(...e){
   // Only change code above this line
 }
  */
+
+
+function range(n=0){
+  print("param:", n)
+  if (n == 0){
+      print("if:", n)
+      return [n]
+  }
+
+  r = range(n-1)
+
+  r.push(n)
+  print("returning...", r)
+
+  return r
+}
+
+function range2(start=0, end=0){
+}
+
+print(range(10))
+
+function print(...e){
+  console.log(...e)
+}
