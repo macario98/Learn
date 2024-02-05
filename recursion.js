@@ -19,18 +19,21 @@ function countDown(maxNumber = 10) {
   return countArray
 }
 
-// #TODO
 //multiply the first n elements of an array
 function multiplyFirstLoop(arr, n) {
   let product = 0
+  if (n > arr.length){//OUTSIDE
+    return 0
+  }
+
   for (let i = 0; i < n; i++) {
     if (arr[i] == 0) {//FINAL RESULT: ZERO
-      return product
+      return 0
     }
     if (i > 0) {
       product *= arr[i]
     } else {//FIRST ELEMENT
-      product = arr[i]
+      product = arr[0]
     }
   }
   return product
