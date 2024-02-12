@@ -54,7 +54,7 @@ function testMultiplyFirstLoop(){
         {entry1:[1,2,3], entry2:2, tobe:2},
         {entry1:[1,2,3], entry2:1, tobe:1},//FIRST ELEMENT:1
         {entry1:[1,2,3], entry2:0, tobe:0},//GET ZERO ELEMENTS
-        {entry1:[1,2,3], entry2:5, tobe:0},//OUTSIDE #TODO
+        {entry1:[1,2,3], entry2:5, tobe:0},//OUTSIDE
 
         {entry1:[0,3,2,1], entry2:1, tobe:0},//FIRST ELEMENT: 0
         {entry1:[0,3,2,1], entry2:0, tobe:0},//GET ZERO ELEMENTS
@@ -74,14 +74,19 @@ function testMultiplyFirstLoop(){
 function testMultiplyFirst(){
     const checks = [
         {entry1:[1,2,3], entry2:2, tobe:2},
-        {entry1:[1,2,3], entry2:1, tobe:1},
-        {entry1:[1,2,3], entry2:0, tobe:0},//ZERO ELEMENTS
-        {entry1:[0,3,2,1], entry2:1, tobe:0},
-        {entry1:[0,3,2,1], entry2:4, tobe:0},//* ZERO
-        {entry1:[0,3,2,1], entry2:5, tobe:0}//OUTSIDDE
+        {entry1:[1,2,3], entry2:1, tobe:1},//FIRST ELEMENT:1
+        {entry1:[1,2,3], entry2:0, tobe:0},//GET ZERO ELEMENTS
+        {entry1:[1,2,3], entry2:5, tobe:0},//OUTSIDE
+
+        {entry1:[0,3,2,1], entry2:1, tobe:0},//FIRST ELEMENT: 0
+        {entry1:[0,3,2,1], entry2:0, tobe:0},//GET ZERO ELEMENTS
+        {entry1:[0,3,2,1], entry2:4, tobe:0},//ZERO, 1 LOOP, Multiplied by zero
+        {entry1:[0,3,2,1], entry2:5, tobe:0},//OUTSIDE POSITIVE
+        {entry1:[0,3,2,1], entry2:-5, tobe:0},//OUTSIDE NEGATIVE
     ]
 
     checks.forEach(e=>{
+        console.log("\n....................................................\n")
         response = recursion.multiplyFirst(e.entry1, e.entry2)
         expected = e.tobe
 

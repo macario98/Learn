@@ -50,14 +50,34 @@ function multiplyFirstLoop(arr, n) {
 
 
 function multiplyFirst(arr, n) {
-  if (arr[n] == 0) {
+  console.info("Function:", "arr:", arr, "n:", n)
+
+  if (0 > n || n > arr.length) {
+    console.warn("0 > n || n > arr.length")
+    console.warn(`0 > ${n} || ${n} > ${arr.length}`)
+    console.warn(`${0 > n} || ${n > arr.length}`)
     return 0
   }
 
-  if (n == 0) {
-    return arr[n]
+  if (arr[n] == 0) {
+    console.warn("arr[n] == 0, returning: 0")
+    return 0
   }
-  return multiplyFirst(arr, n - 1) * arr[n - 1]
+  
+  if (arr[n] == 0) {
+    console.warn("arr[n] == 0, returning: 0")
+    return 0
+  }
+
+  if (n>1){
+    return multiplyFirst(arr, n-1) * arr[n-1]
+  }
+
+  if (n == 1){
+    return arr[0]//first Element
+  }
+
+  return 0
 } 
 
 /*function multiplyFirst(arr, n) {//freecodecamp
