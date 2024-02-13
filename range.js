@@ -1,9 +1,11 @@
 module.exports = Range
 
 function Range(n=0){
-    let r = []
-    for (let i=0; i<n; i++){
-        r.push(i)
+    if(n<=0){
+        return []
     }
-    return r
+
+    n--
+
+    return [...Range(n),n]
 }

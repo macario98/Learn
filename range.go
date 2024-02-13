@@ -3,12 +3,11 @@ package main
 import "fmt"
 
 func Range(n int) []int {
-	r := []int{}
-	for i := 0; i < n; i++ {
-		r = append(r, i)
+	if n <= 0 {
+		return []int{}
 	}
-
-	return r
+	n--
+	return append(Range(n), n)
 }
 
 func main() {

@@ -1,7 +1,10 @@
 def Range(n=0):
-    r = []
-    for i in range(n):
-        r.append(i)
+    print(n)
+    if (n<=0):
+        return []
+    n -= 1#n--
+    r = Range(n)
+    r.append(n)
 
     return r
 
