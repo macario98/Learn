@@ -1,7 +1,6 @@
-package main
+package learn
 
 import (
-	"fmt"
 	"sort"
 	"strings"
 )
@@ -27,10 +26,4 @@ func isAnagram(strA, strB string) bool {
 	sortedB := sortAlphabeticallY(lowStrB)
 
 	return sortedA == sortedB
-}
-
-func main() {
-	fmt.Println(isAnagram("abc", "AbC"))
-	fmt.Println(isAnagram("abc", "CBa"))
-	fmt.Println(isAnagram("abc", "bCAd"))
 }

@@ -1,4 +1,4 @@
-package main
+package learn
 
 import "fmt"
 
@@ -29,13 +29,4 @@ func fizzBuzz(lLow int, lUpp int, f func(n string)) []string {
 	}
 
 	return r
-}
-
-func main() {
-	fmt.Println("hello world")
-	r := fizzBuzz(0, 101, print)
-
-	print(fmt.Sprint(r))
-	print(fmt.Sprintf("%v", r))
-	print(fmt.Sprintf("%+q", r))
 }
